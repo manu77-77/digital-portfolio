@@ -1,198 +1,460 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F8D7C6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manu R — AI/ML and Python enthusiast showcasing agriculture-focused AI projects.">
+  <title>Manu R | AI/ML Portfolio</title>
 
-        header {
-            background-color: #008080;
-            color: #fff;
-            text-align: center;
-            padding: 2rem 0;
-            position: center; /* Add this */
-        }
+  <style>
+    :root {
+      --green: #15945b;
+      --dark: #08271f;
+      --light: #f2f8f4;
+      --text: #20352f;
+      --muted: #60736b;
+      --white: #ffffff;
+    }
 
-        .header-content h1 {
-            font-size: 2.0rem;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* Add styles for the round profile picture */
-        .profile-picture {
-            width: 120px; /* Adjust the size as needed */
-            height: 120px;
-            border-radius: 75%; /* Create a circular shape */
-            object-fit: cover; /* To ensure the image fills the circular area */
-            position: absolute; /* Add this */
-            top: 40px; /* Adjust top position as needed */
-            left: 120px; /* Adjust left position as needed */
-        }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
-        nav {
-            background-color: #008080
-            color: #fff;
-            text-align: center;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        nav ul {
-            background-color: #fff;
-            list-style-type: none;
-            padding: 1 ;
-        }
+    a { color: inherit; text-decoration: none; }
 
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
+    .container { width: min(1120px, 90%); margin: auto; }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
+    header {
+      background: rgba(6, 34, 26, 0.97);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #285343;
+    }
 
-        .section-content {
-            background-color: #fff;
-            padding: 2rem;
-            margin: 1rem;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: justify;
-        }
+    nav {
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-        .download-button {
-            background-color: #F8D7C6;
-            color: #333;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 30px;
-            display: inline-block;
-            margin-top: 20px;
-            align-self: center;
-        }
+    .brand { font-size: 1.2rem; font-weight: 800; }
+    .brand span, .highlight { color: #54df94; }
 
-        .download-button:hover {
-            background-color: #555;
-        }
+    .nav-links {
+      display: flex;
+      gap: 23px;
+      align-items: center;
+      list-style: none;
+      font-size: 0.9rem;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #008080;
-            color: #fff;
-        }
+    .nav-links a:hover { color: #54df94; }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-    </style>
+    .hero {
+      background:
+        radial-gradient(ellipse at 80% 20%, #18543d 0%, transparent 42%),
+        linear-gradient(125deg, #071d18, #0c3829 65%, #123f2d);
+      color: white;
+      padding: 85px 0;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .eyebrow {
+      color: #6de7a5;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      line-height: 1.12;
+      margin: 12px 0;
+    }
+
+    .hero h2 { font-size: 1.25rem; margin-bottom: 15px; }
+
+    .hero p {
+      max-width: 610px;
+      color: #d4e7dc;
+      margin-bottom: 25px;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: min(290px, 100%);
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #6de7a5;
+      box-shadow: 0 0 50px #34b87835;
+    }
+
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .button {
+      display: inline-block;
+      padding: 11px 19px;
+      border-radius: 9px;
+      font-weight: bold;
+      font-size: 0.93rem;
+      border: 1px solid #54df94;
+      transition: 0.2s;
+    }
+
+    .button-primary { background: #54df94; color: #08271f; }
+    .button-outline { color: white; }
+    .button:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    .social-links { margin-top: 22px; display: flex; gap: 22px; }
+    .social-links a { color: #d4e7dc; font-size: 0.92rem; }
+    .social-links a:hover { color: #54df94; }
+
+    section { padding: 65px 0; }
+
+    .section-title { margin-bottom: 30px; }
+    .section-title h2 { font-size: 2rem; color: var(--dark); }
+    .section-title p { color: var(--muted); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 35px;
+    }
+
+    .info-card, .skill-card, .project-card, .experience-card {
+      background: var(--white);
+      border: 1px solid #dfebe3;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 25px #103c2010;
+    }
+
+    .info-list { list-style: none; }
+    .info-list li { margin-bottom: 12px; overflow-wrap: anywhere; }
+    .info-list strong { color: var(--dark); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card h3, .project-card h3 { margin-bottom: 13px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; }
+
+    .tag {
+      background: #e7f6ec;
+      color: #176440;
+      padding: 5px 11px;
+      border-radius: 20px;
+      font-size: 0.84rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-banner {
+      margin: -25px -25px 20px;
+      padding: 30px 25px;
+      border-radius: 14px 14px 0 0;
+      background: linear-gradient(125deg, #0a3827, #249a60);
+      color: white;
+      font-size: 2rem;
+    }
+
+    .project-card p { color: var(--muted); margin-bottom: 18px; }
+    .project-card .tags { margin-bottom: 20px; }
+    .project-link { color: var(--green); font-weight: bold; }
+    .project-link:hover { text-decoration: underline; }
+
+    .status {
+      display: inline-block;
+      color: #176440;
+      background: #e7f6ec;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+
+    .experience-card { border-left: 4px solid var(--green); }
+    .experience-card p { margin-top: 8px; color: var(--muted); }
+
+    .contact-panel {
+      background: var(--dark);
+      color: white;
+      padding: 35px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .contact-panel p { color: #d4e7dc; margin: 12px 0 22px; }
+    .contact-panel a:not(.button) { color: #6de7a5; overflow-wrap: anywhere; }
+
+    footer {
+      text-align: center;
+      padding: 23px;
+      background: #051c16;
+      color: #c6d8ce;
+      font-size: 0.87rem;
+    }
+
+    @media (max-width: 760px) {
+      nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 14px; flex-wrap: wrap; font-size: 0.84rem; }
+      .hero { padding: 55px 0; }
+      .hero-grid, .about-grid, .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-image { grid-row: 1; }
+      .hero-image img { width: 175px; }
+      section { padding: 45px 0; }
+      .contact-panel { padding: 25px 18px; }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="header-content">
-            <!-- Add your profile picture here -->
-            <img src="image.mr.jpeg" alt="Your Profile Picture" class="profile-picture">
-            <h1>MANU R</h1>
-            <h6>BSC [AI & ML ]</h6>
-        </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-           
-        </ul>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">🌿 Manu <span>R</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Internship</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <section id="about">
-        <div class="section-content">
-            <h2>About Me</h2>
-            <p>I'm a <b>BSC computer science (Artificial intelligence and machine learning)</b> Student at Sree Narayana Guru college, I'am dedicated and ambitious student whith a strong problem solving skill for learning and growth. My passion for web development as driven me to pursue various projects, intensive and research initiatives that have not only honed my skills but also depended my understanding for the field.I'am eager to apply my skills and knownledge in real-world settings and make a positive imppact in my community and country</p>
-
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Hello, I'm</div>
+          <h1>Manu <span class="highlight">R</span></h1>
+          <h2>AI/ML Enthusiast | B.Sc. Graduate</h2>
+          <p>
+            I enjoy building Python-based applications and exploring
+            Machine Learning and Artificial Intelligence to solve
+            real-world problems, especially in agriculture.
+          </p>
+          <div class="buttons">
+            <a class="button button-primary" href="#projects">Explore Projects ↗</a>
+            <a class="button button-outline" href="manur_resume.pdf" target="_blank" rel="noopener">
+              Download Résumé ↓
+            </a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/manu77-77" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="mailto:manur9963@gmail.com">Email ↗</a>
+          </div>
         </div>
+        <div class="hero-image">
+          <img src="image.mr.jpeg" alt="Manu R profile photo">
+        </div>
+      </div>
     </section>
 
-    <section id="education">
-        <div class="section-content">
-            <h2>Education</h2>
-            <p>BSC computer science (Artificial intelligence and machine learning) <br> <br>
-
-Sree Narayana Guru college <br>
-Affiliated to Bharathiar University</p>
-            
-            
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <p>A little about my background and interests.</p>
         </div>
+        <div class="about-grid">
+          <div class="info-card">
+            <h3>My Introduction</h3>
+            <p>
+              I am a recent B.Sc. graduate in Artificial Intelligence and
+              Machine Learning from Sree Narayana Guru College, affiliated
+              with Bharathiar University. I have hands-on project experience
+              in Python-based application development, including
+              SmartAgroMind AI, an agriculture-focused system that predicts
+              harvest outcomes using machine-learning models.
+            </p>
+            <p style="margin-top: 14px;">
+              I am interested in entry-level AI/ML and Python development
+              opportunities where I can contribute, learn and grow.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>Quick Information</h3>
+            <ul class="info-list" style="margin-top: 14px;">
+              <li>🎓 <strong>Education:</strong> B.Sc. AI & ML, 2023–2026</li>
+              <li>📍 <strong>Location:</strong> Palakkad, Kerala, India</li>
+              <li>✉️ <strong>Email:</strong>
+                <a href="mailto:manur9963@gmail.com">manur9963@gmail.com</a>
+              </li>
+              <li>💻 <strong>GitHub:</strong>
+                <a href="https://github.com/manu77-77" target="_blank" rel="noopener">
+                  View my profile
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
-        <div class="section-content">
-            <h2>Skills</h2>
-            <ul>
-                <li>C++</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>HTML</li>
-                <li>SQL</li>
-                <li>spreadsheet</li>
-                <li>Word processing</li>
-             
-            </ul>
+      <div class="container">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Technologies and areas I have studied or worked with.</p>
         </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Technical Skills</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Artificial Intelligence</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Java</span>
+              <span class="tag">R</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML</span>
+              <span class="tag">NLP</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Professional Strengths</h3>
+            <div class="tags">
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Communication</span>
+              <span class="tag">Teamwork</span>
+              <span class="tag">Self-Motivation</span>
+              <span class="tag">Continuous Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="projects">
-        <div class="section-content">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">Capstone project ( AI Predictive RPS)</a></li>
-                <li><a href="#">Personal portfolio </a></li>
-               
-                <!-- Add more project links here -->
-            </ul>
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Projects</h2>
+          <p>Practical work that demonstrates my interests and skills.</p>
         </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-banner">🌱 🌿</div>
+            <h3>SmartAgroMind AI System</h3>
+            <p>
+              An agriculture-support application using crop-specific
+              machine-learning models to classify predicted harvest outcomes
+              as Good, Normal or Bad and provide farming-related guidance.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Random Forest</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Streamlit</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/manu77-77/SmartAgroMind-AI"
+               target="_blank" rel="noopener">
+              Explore source code ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-banner">🌿 📊</div>
+            <span class="status">In Development</span>
+            <h3>LiveLeaf</h3>
+            <p>
+              An agriculture-focused application concept for plant-growth
+              tracking, day-to-day crop management and smart farming guidance.
+              Development is ongoing.
+            </p>
+            <div class="tags">
+              <span class="tag">Agriculture</span>
+              <span class="tag">Application Development</span>
+              <span class="tag">Python</span>
+            </div>
+            <span class="project-link">Project in development</span>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="resume">
-    
-        <div class="section-content">
-            <center>
-            <h2>Resume</h2>
-            <a href="resume.mr.pdf" target="_blank" class="download-button">Download CV</a>
-        </center>
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">
+          <h2>Internship</h2>
+          <p>My practical learning experience.</p>
         </div>
-        
+        <div class="experience-card">
+          <h3>Java Programming with NLP Intern</h3>
+          <p><strong>Keltron Knowledge Centre</strong> · Palakkad, Kerala</p>
+          <p>June 2025</p>
+          <p>
+            Completed internship training in Java programming and Natural
+            Language Processing, with exposure to Stanford CoreNLP,
+            Apache OpenNLP, text processing and database-connectivity concepts.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 MANU R</p>
-    </footer>
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <h2>Let's Connect</h2>
+          <p>
+            I am interested in entry-level AI/ML and Python opportunities.
+            Feel free to explore my projects or contact me.
+          </p>
+          <div class="buttons" style="justify-content:center;">
+            <a class="button button-primary" href="mailto:manur9963@gmail.com">
+              Contact Me
+            </a>
+            <a class="button button-outline"
+               href="https://github.com/manu77-77"
+               target="_blank" rel="noopener">
+              GitHub Profile ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // Smooth scrolling to section when clicking on navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+  <footer>
+    © 2026 Manu R · Built with HTML and CSS · Keep Learning, Build & Grow 🌿
+  </footer>
 </body>
 </html>
