@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,11 @@
       --border: #dfebe3;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -33,9 +38,20 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .container { width: min(1120px, 90%); margin: auto; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
 
     header {
       position: sticky;
@@ -61,7 +77,10 @@
       white-space: nowrap;
     }
 
-    .brand-icon { color: var(--bright); }
+    .brand-icon {
+      color: var(--bright);
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -71,7 +90,9 @@
       font-size: .88rem;
     }
 
-    .nav-links a:hover { color: var(--bright); }
+    .nav-links a:hover {
+      color: var(--bright);
+    }
 
     .nav-resume {
       border: 1px solid var(--bright);
@@ -79,7 +100,7 @@
       padding: 7px 12px;
     }
 
-    /* HERO: agriculture image with a dark overlay */
+    /* HERO */
     .hero {
       color: white;
       padding: 55px 0 45px;
@@ -110,7 +131,10 @@
       margin: 7px 0 12px;
     }
 
-    .hero h2 { font-size: 1.2rem; margin-bottom: 14px; }
+    .hero h2 {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+    }
 
     .hero-copy {
       max-width: 590px;
@@ -118,7 +142,10 @@
       margin-bottom: 20px;
     }
 
-    .hero-image { display: flex; justify-content: center; }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
 
     .hero-image img {
       width: min(270px, 100%);
@@ -129,7 +156,8 @@
       box-shadow: 0 0 0 1px var(--bright), 0 12px 40px #0005;
     }
 
-    .buttons, .social-links {
+    .buttons,
+    .social-links {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -146,13 +174,32 @@
       transition: .2s;
     }
 
-    .button:hover { transform: translateY(-2px); }
-    .button-primary { background: var(--bright); color: var(--dark); }
-    .button-outline { color: white; }
-    .social-links { margin-top: 18px; gap: 22px; font-size: .9rem; }
-    .social-links a:hover { color: var(--bright); }
+    .button:hover {
+      transform: translateY(-2px);
+    }
 
-    section { padding: 40px 0; }
+    .button-primary {
+      background: var(--bright);
+      color: var(--dark);
+    }
+
+    .button-outline {
+      color: white;
+    }
+
+    .social-links {
+      margin-top: 18px;
+      gap: 22px;
+      font-size: .9rem;
+    }
+
+    .social-links a:hover {
+      color: var(--bright);
+    }
+
+    section {
+      padding: 40px 0;
+    }
 
     .section-title {
       display: flex;
@@ -161,9 +208,19 @@
       margin-bottom: 20px;
     }
 
-    .section-icon { font-size: 1.3rem; }
-    .section-title h2 { color: var(--dark); font-size: 1.7rem; }
-    .section-subtitle { color: var(--muted); margin: -12px 0 20px; }
+    .section-icon {
+      font-size: 1.3rem;
+    }
+
+    .section-title h2 {
+      color: var(--dark);
+      font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin: -12px 0 20px;
+    }
 
     .about-grid {
       display: grid;
@@ -171,17 +228,29 @@
       gap: 28px;
     }
 
-    .info-card, .skill-card, .project-card, .experience-card {
+    .info-card,
+    .skill-card,
+    .project-card,
+    .experience-card {
       background: white;
       border: 1px solid var(--border);
       border-radius: 13px;
       box-shadow: 0 7px 22px #103c200b;
     }
 
-    .info-card { padding: 22px 24px; }
-    .info-card h3 { margin-bottom: 8px; color: var(--dark); }
+    .info-card {
+      padding: 22px 24px;
+    }
 
-    .quick-info { list-style: none; }
+    .info-card h3 {
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .quick-info {
+      list-style: none;
+    }
+
     .quick-info li {
       display: grid;
       grid-template-columns: 27px 1fr;
@@ -190,17 +259,28 @@
       overflow-wrap: anywhere;
     }
 
-    .quick-info strong { color: var(--dark); }
-    .quick-info a { color: #176c48; }
-    .quick-info a:hover { text-decoration: underline; }
+    .quick-info strong {
+      color: var(--dark);
+    }
 
-    .skills-grid, .projects-grid {
+    .quick-info a {
+      color: #176c48;
+    }
+
+    .quick-info a:hover {
+      text-decoration: underline;
+    }
+
+    .skills-grid,
+    .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .skill-card { padding: 20px; }
+    .skill-card {
+      padding: 20px;
+    }
 
     .skill-title {
       display: flex;
@@ -221,7 +301,11 @@
       font-size: 1rem;
     }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
     .tag {
       display: inline-block;
@@ -233,29 +317,51 @@
       font-size: .81rem;
     }
 
-    /* Project cards use the actual repository banner images */
-    .project-card { overflow: hidden; }
+    /* PROJECT IMAGES: display the entire image without cropping */
+    .project-card {
+      overflow: hidden;
+      min-width: 0;
+    }
 
     .project-banner {
-      height: 112px;
-      position: relative;
+      width: 100%;
+      height: 150px;
+      margin: 0;
+      padding: 0;
       overflow: hidden;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(120deg, #0a3827, #249a60);
+      border-radius: 12px 12px 0 0;
+      background: #e7f6ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .project-banner img {
+      display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
     }
 
-    .project-content { padding: 18px 20px 21px; }
-    .project-content h3 { margin-bottom: 8px; color: var(--dark); }
-    .project-content p { color: var(--muted); margin-bottom: 15px; }
+    .project-content {
+      padding: 18px 20px 21px;
+    }
 
-    .project-content .tags { margin-bottom: 16px; }
+    .project-content h3 {
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .project-content .tags {
+      margin-bottom: 16px;
+    }
 
     .project-link {
       color: #11834e;
@@ -263,7 +369,9 @@
       font-size: .9rem;
     }
 
-    .project-link:hover { text-decoration: underline; }
+    .project-link:hover {
+      text-decoration: underline;
+    }
 
     .status {
       display: inline-block;
@@ -283,16 +391,30 @@
       gap: 25px;
     }
 
-    .experience-card h3 { font-size: 1.05rem; color: var(--dark); }
-    .experience-card p, .experience-card ul {
+    .experience-card h3 {
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+
+    .experience-card p,
+    .experience-card ul {
       color: var(--muted);
       font-size: .92rem;
     }
 
-    .experience-card p { margin-top: 5px; }
-    .experience-card ul { padding-left: 19px; }
+    .experience-card p {
+      margin-top: 5px;
+    }
 
-    .languages { display: flex; flex-wrap: wrap; gap: 9px; }
+    .experience-card ul {
+      padding-left: 19px;
+    }
+
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
 
     .language {
       padding: 5px 12px;
@@ -315,33 +437,101 @@
       font-size: .82rem;
     }
 
-    .footer-motto { color: #6de7a5; }
+    .footer-motto {
+      color: #6de7a5;
+    }
 
     @media (max-width: 800px) {
-      nav { padding: 12px 0; align-items: flex-start; flex-direction: column; }
-      .nav-links { gap: 12px 17px; }
-      .hero-grid { grid-template-columns: 1.2fr .8fr; gap: 22px; }
-      .hero-image img { width: 190px; }
-      .about-grid { grid-template-columns: 1fr; gap: 16px; }
-      .experience-card { grid-template-columns: 1fr; gap: 12px; }
+      nav {
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px 17px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.2fr .8fr;
+        gap: 22px;
+      }
+
+      .hero-image img {
+        width: 190px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
     }
 
     @media (max-width: 560px) {
-      .container { width: 92%; }
-      .hero { padding: 38px 0; }
-      .hero-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
-      .hero-image { grid-row: 1; }
-      .hero-image img { width: 155px; }
-      h1 { font-size: 3rem; }
-      section { padding: 32px 0; }
-      .info-card, .skill-card { padding: 18px; }
-      .project-content { padding: 16px; }
-      footer { align-items: flex-start; flex-direction: column; }
+      .container {
+        width: 92%;
+      }
+
+      .hero {
+        padding: 38px 0;
+      }
+
+      .hero-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        grid-row: 1;
+      }
+
+      .hero-image img {
+        width: 155px;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      section {
+        padding: 32px 0;
+      }
+
+      .info-card,
+      .skill-card {
+        padding: 18px;
+      }
+
+      .project-content {
+        padding: 16px;
+      }
+
+      .project-banner {
+        height: 140px;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -349,7 +539,10 @@
 <body>
   <header>
     <nav class="container" aria-label="Main navigation">
-      <a class="brand" href="#home"><span class="brand-icon">🌿</span> Manu R</a>
+      <a class="brand" href="#home">
+        <span class="brand-icon">🌿</span> Manu R
+      </a>
+
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -357,7 +550,12 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Internship</a></li>
         <li><a href="#languages">Languages</a></li>
-        <li><a class="nav-resume" href="manur_resume.pdf" target="_blank" rel="noopener">↓ Download Résumé</a></li>
+        <li>
+          <a class="nav-resume" href="manur_resume.pdf"
+             target="_blank" rel="noopener noreferrer">
+            ↓ Download Résumé
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -369,30 +567,51 @@
           <div class="eyebrow">♙ Hello, I'm</div>
           <h1>Manu R</h1>
           <h2>AI/ML Enthusiast | B.Sc. Graduate</h2>
+
           <p class="hero-copy">
             Passionate about building intelligent solutions for real-world
             problems. I enjoy working with Python, Machine Learning and creating
             applications that make a positive impact, especially in agriculture
             and farming.
           </p>
+
           <div class="buttons">
-            <a class="button button-primary" href="#projects">▣ View Projects</a>
-            <a class="button button-outline" href="manur_resume.pdf" target="_blank" rel="noopener">↓ Download Résumé</a>
+            <a class="button button-primary" href="#projects">
+              ▣ View Projects
+            </a>
+            <a class="button button-outline" href="manur_resume.pdf"
+               target="_blank" rel="noopener noreferrer">
+              ↓ Download Résumé
+            </a>
           </div>
+
           <div class="social-links">
-            <a href="https://github.com/manu77-77" target="_blank" rel="noopener">◉ GitHub ↗</a>
-            <span>▣ LinkedIn (coming soon)</span>
+            <a href="https://github.com/manu77-77"
+               target="_blank" rel="noopener noreferrer">
+              ◉ GitHub ↗
+            </a>
+
+            <a href="https://www.linkedin.com/in/manu-r-333676372/"
+               target="_blank" rel="noopener noreferrer">
+              ▣ LinkedIn ↗
+            </a>
           </div>
         </div>
+
         <div class="hero-image">
-          <img src="avatar-mountain.png" alt="Illustrated person looking across a green mountain landscape">
+          <img src="avatar-mountain.png"
+               alt="Illustrated person looking across a green mountain landscape">
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container">
-        <div class="section-title"><span class="section-icon">👤</span><h2>About Me</h2></div>
+        <div class="section-title">
+          <span class="section-icon">👤</span>
+          <h2>About Me</h2>
+        </div>
+
         <div class="about-grid">
           <article class="info-card">
             <h3>My Introduction</h3>
@@ -407,13 +626,38 @@
               entry-level AI/ML and Python development opportunities.
             </p>
           </article>
+
           <article class="info-card">
             <h3>Quick Information</h3>
             <ul class="quick-info">
-              <li><span>🎓</span><span><strong>Education:</strong> B.Sc. AI &amp; ML<br>(2023–2026)</span></li>
-              <li><span>📍</span><span><strong>Location:</strong> Palakkad, Kerala, India</span></li>
-              <li><span>💻</span><span><strong>GitHub:</strong> <a href="https://github.com/manu77-77" target="_blank" rel="noopener">View my profile ↗</a></span></li>
-              <li><span>🔗</span><span><strong>LinkedIn:</strong> Profile link coming soon</span></li>
+              <li>
+                <span>🎓</span>
+                <span><strong>Education:</strong> B.Sc. AI &amp; ML<br>(2023–2026)</span>
+              </li>
+              <li>
+                <span>📍</span>
+                <span><strong>Location:</strong> Palakkad, Kerala, India</span>
+              </li>
+              <li>
+                <span>💻</span>
+                <span>
+                  <strong>GitHub:</strong>
+                  <a href="https://github.com/manu77-77"
+                     target="_blank" rel="noopener noreferrer">
+                    View my profile ↗
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span>💼</span>
+                <span>
+                  <strong>LinkedIn:</strong>
+                  <a href="https://www.linkedin.com/in/manu-r-333676372/"
+                     target="_blank" rel="noopener noreferrer">
+                    View my profile ↗
+                  </a>
+                </span>
+              </li>
             </ul>
           </article>
         </div>
@@ -422,23 +666,42 @@
 
     <section id="skills">
       <div class="container">
-        <div class="section-title"><span class="section-icon">⚙️</span><h2>Skills</h2></div>
+        <div class="section-title">
+          <span class="section-icon">⚙️</span>
+          <h2>Skills</h2>
+        </div>
+
         <div class="skills-grid">
           <article class="skill-card">
-            <div class="skill-title"><span class="skill-icon">‹/›</span><h3>Technical Skills</h3></div>
+            <div class="skill-title">
+              <span class="skill-icon">&lt;/&gt;</span>
+              <h3>Technical Skills</h3>
+            </div>
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">R</span><span class="tag">Java</span>
-              <span class="tag">Machine Learning</span><span class="tag">Artificial Intelligence</span>
-              <span class="tag">Deep Learning</span><span class="tag">SQL</span>
-              <span class="tag">HTML</span><span class="tag">NLP</span>
+              <span class="tag">Python</span>
+              <span class="tag">R</span>
+              <span class="tag">Java</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Artificial Intelligence</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML</span>
+              <span class="tag">NLP</span>
             </div>
           </article>
+
           <article class="skill-card">
-            <div class="skill-title"><span class="skill-icon">♧</span><h3>Soft Skills</h3></div>
+            <div class="skill-title">
+              <span class="skill-icon">♧</span>
+              <h3>Soft Skills</h3>
+            </div>
             <div class="tags">
-              <span class="tag">Communication</span><span class="tag">Punctuality</span>
-              <span class="tag">Problem Solving</span><span class="tag">Teamwork</span>
-              <span class="tag">Self Motivation</span><span class="tag">Continuous Learning</span>
+              <span class="tag">Communication</span>
+              <span class="tag">Punctuality</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Teamwork</span>
+              <span class="tag">Self Motivation</span>
+              <span class="tag">Continuous Learning</span>
             </div>
           </article>
         </div>
@@ -447,13 +710,22 @@
 
     <section id="projects">
       <div class="container">
-        <div class="section-title"><span class="section-icon">📁</span><h2>Featured Projects</h2></div>
-        <p class="section-subtitle">Practical work that demonstrates my interests and skills.</p>
+        <div class="section-title">
+          <span class="section-icon">📁</span>
+          <h2>Featured Projects</h2>
+        </div>
+
+        <p class="section-subtitle">
+          Practical work that demonstrates my interests and skills.
+        </p>
+
         <div class="projects-grid">
           <article class="project-card">
             <div class="project-banner">
-              <img src="smartagromind-banner.png" alt="SmartAgroMind agriculture project banner">
+              <img src="smartagromind-banner.png"
+                   alt="SmartAgroMind AI agricultural technology">
             </div>
+
             <div class="project-content">
               <h3>SmartAgroMind AI System</h3>
               <p>
@@ -461,18 +733,28 @@
                 machine-learning models to classify predicted harvest outcomes
                 as Good, Normal or Bad and provide farming-related guidance.
               </p>
+
               <div class="tags">
-                <span class="tag">Python</span><span class="tag">Random Forest</span>
-                <span class="tag">Machine Learning</span><span class="tag">Streamlit</span>
+                <span class="tag">Python</span>
+                <span class="tag">Random Forest</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Streamlit</span>
               </div>
-              <a class="project-link" href="https://github.com/manu77-77/SmartAgroMind-AI" target="_blank" rel="noopener">Explore source code ↗</a>
+
+              <a class="project-link"
+                 href="https://github.com/manu77-77/SmartAgroMind-AI"
+                 target="_blank" rel="noopener noreferrer">
+                Explore source code ↗
+              </a>
             </div>
           </article>
 
           <article class="project-card">
             <div class="project-banner">
-              <img src="liveleaf-banner.png" alt="LiveLeaf plant growth and agriculture banner">
+              <img src="liveleaf-banner.png"
+                   alt="LiveLeaf plant growth and smart agriculture">
             </div>
+
             <div class="project-content">
               <span class="status">In Development</span>
               <h3>LiveLeaf</h3>
@@ -481,10 +763,13 @@
                 tracking, day-to-day crop management and smart farming guidance.
                 Development is ongoing.
               </p>
+
               <div class="tags">
-                <span class="tag">Agriculture</span><span class="tag">Application Development</span>
+                <span class="tag">Agriculture</span>
+                <span class="tag">Application Development</span>
                 <span class="tag">Python</span>
               </div>
+
               <span class="project-link">Project in development</span>
             </div>
           </article>
@@ -494,17 +779,30 @@
 
     <section id="experience">
       <div class="container">
-        <div class="section-title"><span class="section-icon">🧳</span><h2>Internship</h2></div>
+        <div class="section-title">
+          <span class="section-icon">💼</span>
+          <h2>Internship</h2>
+        </div>
+
         <article class="experience-card">
           <div>
             <h3>Java Programming with NLP Intern</h3>
             <p>♟ Keltron Knowledge Centre, Palakkad, Kerala</p>
             <p>▦ June 2025</p>
           </div>
+
           <ul>
-            <li>Completed internship training in Java programming and Natural Language Processing.</li>
-            <li>Gained practical exposure to Stanford CoreNLP and Apache OpenNLP.</li>
-            <li>Worked on text-processing and database-connectivity concepts covered in the internship.</li>
+            <li>
+              Completed internship training in Java programming and Natural
+              Language Processing.
+            </li>
+            <li>
+              Gained practical exposure to Stanford CoreNLP and Apache OpenNLP.
+            </li>
+            <li>
+              Worked on text-processing and database-connectivity concepts
+              covered in the internship.
+            </li>
           </ul>
         </article>
       </div>
@@ -512,7 +810,11 @@
 
     <section id="languages">
       <div class="container">
-        <div class="section-title"><span class="section-icon">◎</span><h2>Languages</h2></div>
+        <div class="section-title">
+          <span class="section-icon">◎</span>
+          <h2>Languages</h2>
+        </div>
+
         <div class="languages">
           <span class="language">English</span>
           <span class="language">Malayalam</span>
